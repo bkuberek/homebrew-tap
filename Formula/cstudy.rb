@@ -5,8 +5,8 @@ class Cstudy < Formula
 
   desc "Local, IDE-first practice for coding interviews"
   homepage "https://github.com/bkuberek/coding-study"
-  url "https://github.com/bkuberek/coding-study/releases/download/v0.9.1/coding_study-0.9.1-py3-none-any.whl"
-  sha256 "435ebb73e1c9feb7243c13127c90dd35f93b82da95f29c820ba544f382f931f8"
+  url "https://github.com/bkuberek/coding-study/releases/download/v0.10.0/coding_study-0.10.0-py3-none-any.whl"
+  sha256 "da1942c9860e0cacfedd596eb8610f35b08435158cdfc031f07a8975816eed28"
   license "MIT"
 
   depends_on "python@3.13"
@@ -24,7 +24,7 @@ class Cstudy < Formula
 
   # The runtime dependencies pinned in uv.lock, each with the hashes of its published files.
   resource "requirements" do
-    url "https://github.com/bkuberek/coding-study/releases/download/v0.9.1/requirements.txt"
+    url "https://github.com/bkuberek/coding-study/releases/download/v0.10.0/requirements.txt"
     sha256 "c61dfd4c2b6ebaaba423f12ed674d7c97bba3acdf7a5e128ff92759c9c891711"
   end
 
@@ -37,7 +37,7 @@ class Cstudy < Formula
              "--require-hashes", "--only-binary=:all:", "--no-deps", "--no-compile",
              "--requirement", "requirements.txt"
     end
-    venv.pip_install buildpath/"coding_study-0.9.1-py3-none-any.whl"
+    venv.pip_install buildpath/"coding_study-0.10.0-py3-none-any.whl"
     bin.install_symlink libexec/"bin/cstudy"
   end
 
@@ -48,9 +48,10 @@ class Cstudy < Formula
         cd ~/cstudy-workspace
         cstudy doctor --fix
 
-      cstudy doctor checks uv, Python 3.13, Node.js and pnpm, and JDK 21, and prints a fix
-      for anything missing. Go 1.24 and Rust 1.80 are optional: it only warns when they
-      are missing. Install guide:
+      cstudy doctor checks uv, Python 3.13, Node.js and pnpm, and a JDK 21 to 26, and
+      prints a fix for anything missing. Go 1.24 and Rust 1.80 are optional: it only warns
+      when they are missing. For Java and Kotlin, install openjdk@25: the openjdk formula
+      installs JDK 27, which cstudy does not support yet. Install guide:
         https://github.com/bkuberek/coding-study/blob/main/docs/guides/toolchains.md
 
       A cstudy installed with uv or pipx runs instead of this one when its directory
