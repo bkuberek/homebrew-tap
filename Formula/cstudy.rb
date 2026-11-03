@@ -5,8 +5,8 @@ class Cstudy < Formula
 
   desc "Local, IDE-first practice for coding interviews"
   homepage "https://github.com/bkuberek/coding-study"
-  url "https://github.com/bkuberek/coding-study/releases/download/v0.10.1/coding_study-0.10.1-py3-none-any.whl"
-  sha256 "87f10d4faef1706110e6ae0c0a8bc52e816559a74b01249ae4f8f27f67ee3402"
+  url "https://github.com/bkuberek/coding-study/releases/download/v0.11.0/coding_study-0.11.0-py3-none-any.whl"
+  sha256 "0e0af8e610ec917922bf1aadc6a9cfd9d36e49a983c520974eb353af2c7d6bbf"
   license "MIT"
 
   depends_on "python@3.13"
@@ -24,7 +24,7 @@ class Cstudy < Formula
 
   # The runtime dependencies pinned in uv.lock, each with the hashes of its published files.
   resource "requirements" do
-    url "https://github.com/bkuberek/coding-study/releases/download/v0.10.1/requirements.txt"
+    url "https://github.com/bkuberek/coding-study/releases/download/v0.11.0/requirements.txt"
     sha256 "c61dfd4c2b6ebaaba423f12ed674d7c97bba3acdf7a5e128ff92759c9c891711"
   end
 
@@ -37,7 +37,7 @@ class Cstudy < Formula
              "--require-hashes", "--only-binary=:all:", "--no-deps", "--no-compile",
              "--requirement", "requirements.txt"
     end
-    venv.pip_install buildpath/"coding_study-0.10.1-py3-none-any.whl"
+    venv.pip_install buildpath/"coding_study-0.11.0-py3-none-any.whl"
     bin.install_symlink libexec/"bin/cstudy"
   end
 
@@ -49,7 +49,7 @@ class Cstudy < Formula
         cstudy doctor --fix
 
       cstudy doctor checks uv, Python 3.13, Node.js and pnpm, and a JDK 21 to 26, and
-      prints a fix for anything missing. Go 1.24 and Rust 1.80 are optional: it only warns
+      prints a fix for anything missing. Go 1.25 and Rust 1.80 are optional: it only warns
       when they are missing. For Java and Kotlin, install openjdk@25: the openjdk formula
       installs JDK 27, which cstudy does not support yet. Install guide:
         https://github.com/bkuberek/coding-study/blob/main/docs/guides/toolchains.md
