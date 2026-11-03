@@ -5,8 +5,8 @@ class Cstudy < Formula
 
   desc "Local, IDE-first practice for coding interviews"
   homepage "https://github.com/bkuberek/coding-study"
-  url "https://github.com/bkuberek/coding-study/releases/download/v0.11.1/coding_study-0.11.1-py3-none-any.whl"
-  sha256 "e73aa960b22e50ca77a6ec93a6ae780a809e2d46495ab9e9b29d3b02ce0ffe73"
+  url "https://github.com/bkuberek/coding-study/releases/download/v0.12.0/coding_study-0.12.0-py3-none-any.whl"
+  sha256 "85f80f330cf48a3a4359e02cf74cc7f52815eb03f766d5c069fef946d6f31bfe"
   license "MIT"
 
   depends_on "python@3.13"
@@ -24,7 +24,7 @@ class Cstudy < Formula
 
   # The runtime dependencies pinned in uv.lock, each with the hashes of its published files.
   resource "requirements" do
-    url "https://github.com/bkuberek/coding-study/releases/download/v0.11.1/requirements.txt"
+    url "https://github.com/bkuberek/coding-study/releases/download/v0.12.0/requirements.txt"
     sha256 "c61dfd4c2b6ebaaba423f12ed674d7c97bba3acdf7a5e128ff92759c9c891711"
   end
 
@@ -37,7 +37,7 @@ class Cstudy < Formula
              "--require-hashes", "--only-binary=:all:", "--no-deps", "--no-compile",
              "--requirement", "requirements.txt"
     end
-    venv.pip_install buildpath/"coding_study-0.11.1-py3-none-any.whl"
+    venv.pip_install buildpath/"coding_study-0.12.0-py3-none-any.whl"
     bin.install_symlink libexec/"bin/cstudy"
   end
 
@@ -55,7 +55,8 @@ class Cstudy < Formula
         https://github.com/bkuberek/coding-study/blob/main/docs/guides/toolchains.md
 
       A cstudy installed with uv or pipx runs instead of this one when its directory
-      comes first on PATH; `which -a cstudy` lists every copy.
+      comes first on PATH; `which -a cstudy` lists every copy, and `cstudy doctor` reports
+      duplicates.
     EOS
   end
 
