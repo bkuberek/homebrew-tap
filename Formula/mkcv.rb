@@ -1,0 +1,76 @@
+# Generated from packaging/homebrew/mkcv.rb.template in bkuberek/mkcv by its release workflow
+# (docs/DEVELOPMENT.md#releases-and-the-homebrew-tap). Change the template there, not this file.
+class Mkcv < Formula
+  include Language::Python::Virtualenv
+
+  desc "Generate ATS-compliant PDF resumes tailored to job descriptions"
+  homepage "https://github.com/bkuberek/mkcv"
+  url "https://github.com/bkuberek/mkcv/releases/download/v1.6.0/mkcv-1.6.0-py3-none-any.whl"
+  sha256 "8ba8c1fb7c2289e0419a19346aad13029b3a9c19afc8a1799885b73744beaee5"
+  license "MIT"
+
+  depends_on "python@3.13"
+
+  # cryptography (pulled in by google-genai) publishes no macOS x86_64 wheel from 50.0 on, and
+  # every dependency is installed as a binary wheel below.
+  on_macos do
+    depends_on arch: :arm64
+  end
+
+  # On Linux the prebuilt cryptography, jiter, pydantic-core and typst extensions link libgcc_s,
+  # which `brew linkage` finds only in Homebrew's gcc.
+  on_linux do
+    depends_on "gcc"
+  end
+
+  # Rewriting the @rpath install name of a prebuilt extension (jiter's, on macOS) to an absolute
+  # path fails: the wheel's Mach-O header has no room for it. Python loads an extension by its
+  # file path and never resolves that name, so keeping it is safe.
+  preserve_rpath
+
+  # The runtime dependencies pinned in uv.lock, each with the hashes of its published files.
+  resource "requirements" do
+    url "https://github.com/bkuberek/mkcv/releases/download/v1.6.0/requirements.txt"
+    sha256 "4a735aa72be5d02f8f96ef62c15a38368c14a94255d85d7336cc2df06f53123e"
+  end
+
+  def install
+    venv = virtualenv_create(libexec, python3, system_site_packages: false)
+    # Binary wheels from PyPI, each checked against its hash. Homebrew's std_pip_args would build
+    # every dependency from source, and several of them (rpds-py, cryptography, pydantic-core)
+    # need a Rust toolchain for that.
+    resource("requirements").stage do
+      system python3, "-m", "pip", "--python=#{libexec}/bin/python", "install",
+             "--require-hashes", "--only-binary=:all:", "--no-deps", "--no-compile",
+             "--requirement", "requirements.txt"
+    end
+    venv.pip_install buildpath/"mkcv-1.6.0-py3-none-any.whl"
+    bin.install_symlink libexec/"bin/mkcv"
+  end
+
+  def caveats
+    <<~EOS
+      mkcv needs an API key for at least one AI provider, for example:
+        export ANTHROPIC_API_KEY=sk-ant-...
+      Add it to your shell profile so it persists. Ollama runs locally and needs no key.
+
+      Create a workspace and fill in your career knowledge base:
+        mkcv init ~/Documents/cv
+        $EDITOR ~/Documents/cv/knowledge-base/career.md
+
+      Which models run each stage, and what they cost:
+        mkcv models
+        https://github.com/bkuberek/mkcv/blob/main/docs/models.md
+
+      A mkcv installed with pip, pipx or uv runs instead of this one when its directory
+      comes first on PATH; `which -a mkcv` lists every copy.
+    EOS
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/mkcv --version")
+    assert_match "generate", shell_output("#{bin}/mkcv --help")
+    system bin/"mkcv", "init", testpath/"workspace"
+    assert_path_exists testpath/"workspace/mkcv.toml"
+  end
+end
