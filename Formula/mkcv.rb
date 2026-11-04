@@ -5,8 +5,8 @@ class Mkcv < Formula
 
   desc "Generate ATS-compliant PDF resumes tailored to job descriptions"
   homepage "https://github.com/bkuberek/mkcv"
-  url "https://github.com/bkuberek/mkcv/releases/download/v1.6.0/mkcv-1.6.0-py3-none-any.whl"
-  sha256 "8ba8c1fb7c2289e0419a19346aad13029b3a9c19afc8a1799885b73744beaee5"
+  url "https://github.com/bkuberek/mkcv/releases/download/v1.7.0/mkcv-1.7.0-py3-none-any.whl"
+  sha256 "83886342488b5a8f0462fc5ba89fbbe3c32dd9eddf66b78687d7c9d7d2fb1461"
   license "MIT"
 
   depends_on "python@3.13"
@@ -30,7 +30,7 @@ class Mkcv < Formula
 
   # The runtime dependencies pinned in uv.lock, each with the hashes of its published files.
   resource "requirements" do
-    url "https://github.com/bkuberek/mkcv/releases/download/v1.6.0/requirements.txt"
+    url "https://github.com/bkuberek/mkcv/releases/download/v1.7.0/requirements.txt"
     sha256 "4a735aa72be5d02f8f96ef62c15a38368c14a94255d85d7336cc2df06f53123e"
   end
 
@@ -44,15 +44,20 @@ class Mkcv < Formula
              "--require-hashes", "--only-binary=:all:", "--no-deps", "--no-compile",
              "--requirement", "requirements.txt"
     end
-    venv.pip_install buildpath/"mkcv-1.6.0-py3-none-any.whl"
+    venv.pip_install buildpath/"mkcv-1.7.0-py3-none-any.whl"
     bin.install_symlink libexec/"bin/mkcv"
   end
 
   def caveats
     <<~EOS
-      mkcv needs an API key for at least one AI provider, for example:
-        export ANTHROPIC_API_KEY=sk-ant-...
-      Add it to your shell profile so it persists. Ollama runs locally and needs no key.
+      mkcv needs an API key for at least one AI provider. The first mkcv command
+      you run creates your user config file, ~/.config/mkcv/settings.toml (private,
+      mode 600), with a place for each key. Open it and fill in the key you use:
+        [default.providers.anthropic]
+        api_key = "sk-ant-..."
+      Environment variables such as ANTHROPIC_API_KEY also work, and
+      MKCV_NO_USER_CONFIG=1 stops mkcv creating the file. Ollama runs locally and
+      needs no key.
 
       Create a workspace and fill in your career knowledge base:
         mkcv init ~/Documents/cv
