@@ -5,8 +5,8 @@ class Mkcv < Formula
 
   desc "Generate ATS-compliant PDF resumes tailored to job descriptions"
   homepage "https://github.com/bkuberek/mkcv"
-  url "https://github.com/bkuberek/mkcv/releases/download/v1.7.0/mkcv-1.7.0-py3-none-any.whl"
-  sha256 "83886342488b5a8f0462fc5ba89fbbe3c32dd9eddf66b78687d7c9d7d2fb1461"
+  url "https://github.com/bkuberek/mkcv/releases/download/v1.8.0/mkcv-1.8.0-py3-none-any.whl"
+  sha256 "80088735073d9b8e6902b41cafd041953ed215ba8a5d0dcd45fbf16d6481c577"
   license "MIT"
 
   depends_on "python@3.13"
@@ -30,7 +30,7 @@ class Mkcv < Formula
 
   # The runtime dependencies pinned in uv.lock, each with the hashes of its published files.
   resource "requirements" do
-    url "https://github.com/bkuberek/mkcv/releases/download/v1.7.0/requirements.txt"
+    url "https://github.com/bkuberek/mkcv/releases/download/v1.8.0/requirements.txt"
     sha256 "4a735aa72be5d02f8f96ef62c15a38368c14a94255d85d7336cc2df06f53123e"
   end
 
@@ -44,7 +44,7 @@ class Mkcv < Formula
              "--require-hashes", "--only-binary=:all:", "--no-deps", "--no-compile",
              "--requirement", "requirements.txt"
     end
-    venv.pip_install buildpath/"mkcv-1.7.0-py3-none-any.whl"
+    venv.pip_install buildpath/"mkcv-1.8.0-py3-none-any.whl"
     bin.install_symlink libexec/"bin/mkcv"
   end
 
