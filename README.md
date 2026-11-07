@@ -7,6 +7,7 @@ Homebrew formulae and casks for projects by Bastian Kuberek. Each project's rele
 | Tool | Type | Description | Install |
 |---|---|---|---|
 | [cstudy](https://github.com/bkuberek/coding-study) | Formula | Local, IDE-first practice for coding interviews | `brew install bkuberek/tap/cstudy` |
+| [mkcv](https://github.com/bkuberek/mkcv) | Formula | AI-powered CLI that generates ATS-compliant resumes | `brew install bkuberek/tap/mkcv` |
 | [spmeta](https://github.com/bkuberek/spmeta) | Cask | Now-playing metadata for Spotify | `brew install bkuberek/tap/spmeta` |
 
 A formula installs a tool that Homebrew sets up on your machine (cstudy runs on Homebrew's Python). A cask installs a prebuilt binary (spmeta is a single Go binary per platform).
