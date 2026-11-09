@@ -8,6 +8,7 @@ Homebrew formulae and casks for projects by Bastian Kuberek. Each project's rele
 |---|---|---|---|
 | [cstudy](https://github.com/bkuberek/coding-study) | Formula | Local, IDE-first practice for coding interviews | `brew install bkuberek/tap/cstudy` |
 | [mkcv](https://github.com/bkuberek/mkcv) | Formula | AI-powered CLI that generates ATS-compliant resumes | `brew install bkuberek/tap/mkcv` |
+| [ropeshift](https://github.com/bkuberek/ropeshift) | Formula | Self-hosted software factory that runs supervised agent CLIs | `brew install bkuberek/tap/ropeshift` |
 | [spmeta](https://github.com/bkuberek/spmeta) | Cask | Now-playing metadata for Spotify | `brew install bkuberek/tap/spmeta` |
 
 A formula installs a tool that Homebrew sets up on your machine (cstudy runs on Homebrew's Python). A cask installs a prebuilt binary (spmeta is a single Go binary per platform).
@@ -26,7 +27,7 @@ brew trust bkuberek/tap
 
 ```bash
 brew update
-brew upgrade cstudy        # or: brew upgrade spmeta
+brew upgrade cstudy        # or: brew upgrade spmeta, brew upgrade ropeshift
 brew uninstall cstudy      # or: brew uninstall spmeta
 ```
 
@@ -34,6 +35,7 @@ brew uninstall cstudy      # or: brew uninstall spmeta
 
 - **cstudy** needs the language toolchains you practice in (Python via uv, Node.js, Java 21). See the [toolchains guide](https://github.com/bkuberek/coding-study/blob/main/docs/guides/toolchains.md), then run `cstudy init` and `cstudy doctor`.
 - **spmeta**: see its [README](https://github.com/bkuberek/spmeta#readme).
+- **ropeshift** drives an agent CLI you install and sign in to yourself (Claude Code in this release). Run `ropeshift init`, then see the [onboarding guide](https://github.com/bkuberek/ropeshift/blob/main/docs/onboarding.md). Run the daemon with `brew services start ropeshift` or `ropeshift service install`, not both.
 
 ## Issues
 
