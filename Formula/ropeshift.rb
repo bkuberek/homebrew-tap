@@ -5,28 +5,28 @@
 class Ropeshift < Formula
   desc "Self-hosted software factory that runs supervised agent CLIs"
   homepage "https://ropeshift.com/"
-  version "0.1.0-alpha.6"
+  version "0.1.0-alpha.7"
   license "FSL-1.1-ALv2"
 
   on_macos do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.6/ropeshift_0.1.0-alpha.6_darwin_arm64.tar.gz"
-      sha256 "65b91ddda2116b7cf08cbc904b3a74f74b42143218c06854a2c277f5ec0be888"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.7/ropeshift_0.1.0-alpha.7_darwin_arm64.tar.gz"
+      sha256 "bab95544b913cd9e4e7544f6f658f58a4bd1ee58d91001560ead561483b31ec9"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.6/ropeshift_0.1.0-alpha.6_darwin_amd64.tar.gz"
-      sha256 "7bb7b5f1c932b1393b273edddeda5de1467bfae3ffdbd0b340ca81d4bda8a047"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.7/ropeshift_0.1.0-alpha.7_darwin_amd64.tar.gz"
+      sha256 "676c0e1e5ecc2c87b26f24cb0476834ba3aae86227e615ac0f8d66361b4ffd20"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.6/ropeshift_0.1.0-alpha.6_linux_arm64.tar.gz"
-      sha256 "621c99f769d77f79acf6f1fa7465960172d5288a86fcc896d1404500bbe13237"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.7/ropeshift_0.1.0-alpha.7_linux_arm64.tar.gz"
+      sha256 "3ebd069187a21c556b73874b690e009c7291168ac08e7a49c8118716b9c204ff"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.6/ropeshift_0.1.0-alpha.6_linux_amd64.tar.gz"
-      sha256 "131a554bee061caa3766c76e6a15d6359cfc0c01c2abe4c18ae5463d1d8404bc"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.7/ropeshift_0.1.0-alpha.7_linux_amd64.tar.gz"
+      sha256 "4ef6b5c02a68e4438af121900035a16268395513888c82a3e79e593351e2d195"
     end
   end
 
