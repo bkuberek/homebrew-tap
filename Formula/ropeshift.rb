@@ -5,28 +5,28 @@
 class Ropeshift < Formula
   desc "Self-hosted software factory that runs supervised agent CLIs"
   homepage "https://ropeshift.com/"
-  version "0.1.0-alpha.11"
+  version "0.1.0-alpha.12"
   license "FSL-1.1-ALv2"
 
   on_macos do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.11/ropeshift_0.1.0-alpha.11_darwin_arm64.tar.gz"
-      sha256 "1687c51dd1159769531de96a102123380b1419d5cb5660ffa8c7e0c99c311570"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.12/ropeshift_0.1.0-alpha.12_darwin_arm64.tar.gz"
+      sha256 "b79662da7b9c2429877307689313a903bd65986eebd32eb056588ab20be1d287"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.11/ropeshift_0.1.0-alpha.11_darwin_amd64.tar.gz"
-      sha256 "7454fa5982d5c7af7fedd0edc28a0fc1276805789a9734907aabcc20ac52ba7d"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.12/ropeshift_0.1.0-alpha.12_darwin_amd64.tar.gz"
+      sha256 "0617dbdf834af7f4d61ee23d5da3b5b1865e53857d1b998c6d1f768922a22a43"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.11/ropeshift_0.1.0-alpha.11_linux_arm64.tar.gz"
-      sha256 "3370d0fdfd6e6535942d2a88c109defe661dd56331e209e0a8a6853f28d13e7a"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.12/ropeshift_0.1.0-alpha.12_linux_arm64.tar.gz"
+      sha256 "5692cc9aacb5df47b0755471c9efc11f3220eda69a46cbae952cc68954b7cfe6"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.11/ropeshift_0.1.0-alpha.11_linux_amd64.tar.gz"
-      sha256 "11e94bc45394b810c52fc751a3c6b30785da60c01fc9d730134a604d1a89e38d"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.12/ropeshift_0.1.0-alpha.12_linux_amd64.tar.gz"
+      sha256 "cfac344a89c3e9888a77bf6c070c6eed55fb8e362745e66fab2ba568117dd3d3"
     end
   end
 
