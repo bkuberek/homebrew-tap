@@ -5,28 +5,28 @@
 class Ropeshift < Formula
   desc "Self-hosted software factory that runs supervised agent CLIs"
   homepage "https://ropeshift.com/"
-  version "0.1.0-alpha.10"
+  version "0.1.0-alpha.11"
   license "FSL-1.1-ALv2"
 
   on_macos do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.10/ropeshift_0.1.0-alpha.10_darwin_arm64.tar.gz"
-      sha256 "0399ab8e8f8c0af8946e103fe68fa7a9cad8e6320c8717310909a5e3d7c44b87"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.11/ropeshift_0.1.0-alpha.11_darwin_arm64.tar.gz"
+      sha256 "1687c51dd1159769531de96a102123380b1419d5cb5660ffa8c7e0c99c311570"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.10/ropeshift_0.1.0-alpha.10_darwin_amd64.tar.gz"
-      sha256 "349a9196c82b6726bd1de58764f2495c7d8eb69e7923fb1889018960d54db8b1"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.11/ropeshift_0.1.0-alpha.11_darwin_amd64.tar.gz"
+      sha256 "7454fa5982d5c7af7fedd0edc28a0fc1276805789a9734907aabcc20ac52ba7d"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.10/ropeshift_0.1.0-alpha.10_linux_arm64.tar.gz"
-      sha256 "8d179173a6cfe73ef39a2340fb7c4a54dfbda55a5e9166ae677e45184119fcc8"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.11/ropeshift_0.1.0-alpha.11_linux_arm64.tar.gz"
+      sha256 "3370d0fdfd6e6535942d2a88c109defe661dd56331e209e0a8a6853f28d13e7a"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.10/ropeshift_0.1.0-alpha.10_linux_amd64.tar.gz"
-      sha256 "313fc2693881a892a3ed155c428babe275430bb1547b92463446cceada0af5db"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.11/ropeshift_0.1.0-alpha.11_linux_amd64.tar.gz"
+      sha256 "11e94bc45394b810c52fc751a3c6b30785da60c01fc9d730134a604d1a89e38d"
     end
   end
 
