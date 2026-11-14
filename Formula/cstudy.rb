@@ -5,8 +5,8 @@ class Cstudy < Formula
 
   desc "Local, IDE-first practice for coding interviews"
   homepage "https://github.com/bkuberek/coding-study"
-  url "https://github.com/bkuberek/coding-study/releases/download/v0.49.0/coding_study-0.49.0-py3-none-any.whl"
-  sha256 "f1740049eb6474cb3e2318f23443ef1c10b835794f6b8e103d24284ffef30a45"
+  url "https://github.com/bkuberek/coding-study/releases/download/v0.50.0/coding_study-0.50.0-py3-none-any.whl"
+  sha256 "8f9aea16e77490e61aee2a079d6d61c6a915b30e21f9e2c19c255b2b264d3e46"
   license "MIT"
 
   depends_on "python@3.13"
@@ -24,7 +24,7 @@ class Cstudy < Formula
 
   # The runtime dependencies pinned in uv.lock, each with the hashes of its published files.
   resource "requirements" do
-    url "https://github.com/bkuberek/coding-study/releases/download/v0.49.0/requirements.txt"
+    url "https://github.com/bkuberek/coding-study/releases/download/v0.50.0/requirements.txt"
     sha256 "255e2763ce6b20ab398e290ee7552d732b4200e73adcba23a9def3538fad3192"
   end
 
@@ -37,7 +37,7 @@ class Cstudy < Formula
              "--require-hashes", "--only-binary=:all:", "--no-deps", "--no-compile",
              "--requirement", "requirements.txt"
     end
-    venv.pip_install buildpath/"coding_study-0.49.0-py3-none-any.whl"
+    venv.pip_install buildpath/"coding_study-0.50.0-py3-none-any.whl"
     bin.install_symlink libexec/"bin/cstudy"
   end
 
@@ -52,7 +52,7 @@ class Cstudy < Formula
       prints a fix for anything missing. Go 1.25 and Rust 1.80 are optional: it only warns
       when they are missing. For Java and Kotlin, install openjdk@25: the openjdk formula
       installs JDK 27, which cstudy does not support yet. Install guide:
-        https://github.com/bkuberek/coding-study/blob/main/docs/guides/toolchains.md
+        https://github.com/bkuberek/coding-study/blob/main/user-docs/toolchains.md
 
       A cstudy installed with uv or pipx runs instead of this one when its directory
       comes first on PATH; `which -a cstudy` lists every copy, and `cstudy doctor` reports
