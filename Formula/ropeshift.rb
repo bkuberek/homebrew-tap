@@ -5,28 +5,28 @@
 class Ropeshift < Formula
   desc "Self-hosted software factory that runs supervised agent CLIs"
   homepage "https://ropeshift.com/"
-  version "0.1.0-alpha.13"
+  version "0.1.0-alpha.14"
   license "FSL-1.1-ALv2"
 
   on_macos do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.13/ropeshift_0.1.0-alpha.13_darwin_arm64.tar.gz"
-      sha256 "f3ca3b650f5a0b931c2eec344ef7e45d242ab095347a641a0690d5348a283f94"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.14/ropeshift_0.1.0-alpha.14_darwin_arm64.tar.gz"
+      sha256 "28cc7adbb2dad1df0205862dbece99964552b44aa2a7fda0767c2f0322809018"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.13/ropeshift_0.1.0-alpha.13_darwin_amd64.tar.gz"
-      sha256 "f8f9e66b92ee02003320e8c0a911c0aced2b4e9d34f06db7b5c6bccf8a2a6758"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.14/ropeshift_0.1.0-alpha.14_darwin_amd64.tar.gz"
+      sha256 "226b6dfce440c7f1d06cb7dbe3cbf93206919e07a5867293ecb4d8ea1a28801c"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.13/ropeshift_0.1.0-alpha.13_linux_arm64.tar.gz"
-      sha256 "8e05c3fd01b7a50e28e9ee1be6efc7a6bbab9cf6617e36e844b7fd4e71a0c624"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.14/ropeshift_0.1.0-alpha.14_linux_arm64.tar.gz"
+      sha256 "37461385667bb53dd3035cf85d17e88881b1fdbb851816fa7d653855791e97b9"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.13/ropeshift_0.1.0-alpha.13_linux_amd64.tar.gz"
-      sha256 "07fb2d4c223e4143a78d08866619dcb09afab3c8799b1c8c7b1de513746dae25"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.14/ropeshift_0.1.0-alpha.14_linux_amd64.tar.gz"
+      sha256 "816a2af84443e0f66f22eeb19e864e0c4d2a15c4b4fff8e699e27abdf64267db"
     end
   end
 
