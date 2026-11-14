@@ -5,8 +5,8 @@ class Cstudy < Formula
 
   desc "Local, IDE-first practice for coding interviews"
   homepage "https://github.com/bkuberek/coding-study"
-  url "https://github.com/bkuberek/coding-study/releases/download/v0.46.0/coding_study-0.46.0-py3-none-any.whl"
-  sha256 "6d98c59fc93f9b31a80869aefa46df294991c92c552d0d32dc71dfcd77923eca"
+  url "https://github.com/bkuberek/coding-study/releases/download/v0.47.0/coding_study-0.47.0-py3-none-any.whl"
+  sha256 "e757bcf94919bb4ca661eaaccec78ff63be98665ca5b716353f30420d938ac7f"
   license "MIT"
 
   depends_on "python@3.13"
@@ -24,7 +24,7 @@ class Cstudy < Formula
 
   # The runtime dependencies pinned in uv.lock, each with the hashes of its published files.
   resource "requirements" do
-    url "https://github.com/bkuberek/coding-study/releases/download/v0.46.0/requirements.txt"
+    url "https://github.com/bkuberek/coding-study/releases/download/v0.47.0/requirements.txt"
     sha256 "255e2763ce6b20ab398e290ee7552d732b4200e73adcba23a9def3538fad3192"
   end
 
@@ -37,7 +37,7 @@ class Cstudy < Formula
              "--require-hashes", "--only-binary=:all:", "--no-deps", "--no-compile",
              "--requirement", "requirements.txt"
     end
-    venv.pip_install buildpath/"coding_study-0.46.0-py3-none-any.whl"
+    venv.pip_install buildpath/"coding_study-0.47.0-py3-none-any.whl"
     bin.install_symlink libexec/"bin/cstudy"
   end
 
