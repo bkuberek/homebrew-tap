@@ -5,28 +5,28 @@
 class Ropeshift < Formula
   desc "Self-hosted software factory that runs supervised agent CLIs"
   homepage "https://ropeshift.com/"
-  version "0.1.0-alpha.14"
+  version "0.1.0-alpha.15"
   license "FSL-1.1-ALv2"
 
   on_macos do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.14/ropeshift_0.1.0-alpha.14_darwin_arm64.tar.gz"
-      sha256 "28cc7adbb2dad1df0205862dbece99964552b44aa2a7fda0767c2f0322809018"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.15/ropeshift_0.1.0-alpha.15_darwin_arm64.tar.gz"
+      sha256 "9a357c48b04321dbbe526758f56cc757fad46fe1cff76030e002a8fd0a67885b"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.14/ropeshift_0.1.0-alpha.14_darwin_amd64.tar.gz"
-      sha256 "226b6dfce440c7f1d06cb7dbe3cbf93206919e07a5867293ecb4d8ea1a28801c"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.15/ropeshift_0.1.0-alpha.15_darwin_amd64.tar.gz"
+      sha256 "fec7c98f7450f14bfb60168eb360dbeeefe3bcc341ef5dbc1eb27ef33486ea00"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.14/ropeshift_0.1.0-alpha.14_linux_arm64.tar.gz"
-      sha256 "37461385667bb53dd3035cf85d17e88881b1fdbb851816fa7d653855791e97b9"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.15/ropeshift_0.1.0-alpha.15_linux_arm64.tar.gz"
+      sha256 "3981a8eac799474836bc835768dd579396a0be3020af3db1442926d9578c2b52"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.14/ropeshift_0.1.0-alpha.14_linux_amd64.tar.gz"
-      sha256 "816a2af84443e0f66f22eeb19e864e0c4d2a15c4b4fff8e699e27abdf64267db"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.15/ropeshift_0.1.0-alpha.15_linux_amd64.tar.gz"
+      sha256 "65254d8254c1a46809ecf1ac37a9910144ab0323a9fb8647db4f6786af135916"
     end
   end
 
