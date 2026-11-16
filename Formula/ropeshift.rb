@@ -1,32 +1,32 @@
 # The Homebrew formula for ropeshift. scripts/homebrew-formula.sh renders it for each release from the
 # release's checksums.txt, and a maintainer commits the result to the project's tap
-# (docs/releasing.md). A formula, not a cask, because only a formula's service block is what
+# (docs/development/releasing.md). A formula, not a cask, because only a formula's service block is what
 # `brew services` runs (ADR-0001).
 class Ropeshift < Formula
   desc "Self-hosted software factory that runs supervised agent CLIs"
   homepage "https://ropeshift.com/"
-  version "0.1.0-alpha.15"
+  version "0.1.0-alpha.16"
   license "FSL-1.1-ALv2"
 
   on_macos do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.15/ropeshift_0.1.0-alpha.15_darwin_arm64.tar.gz"
-      sha256 "9a357c48b04321dbbe526758f56cc757fad46fe1cff76030e002a8fd0a67885b"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.16/ropeshift_0.1.0-alpha.16_darwin_arm64.tar.gz"
+      sha256 "d624104d5af7c11ac327994cb097557372c5e3fcc99af52dc03e393b82044c84"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.15/ropeshift_0.1.0-alpha.15_darwin_amd64.tar.gz"
-      sha256 "fec7c98f7450f14bfb60168eb360dbeeefe3bcc341ef5dbc1eb27ef33486ea00"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.16/ropeshift_0.1.0-alpha.16_darwin_amd64.tar.gz"
+      sha256 "dd0cefa12115f1f22b7c2a25b6b11c16462e6f74720ceaf1f1d1272e206bd03a"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.15/ropeshift_0.1.0-alpha.15_linux_arm64.tar.gz"
-      sha256 "3981a8eac799474836bc835768dd579396a0be3020af3db1442926d9578c2b52"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.16/ropeshift_0.1.0-alpha.16_linux_arm64.tar.gz"
+      sha256 "04a4aa52e6872aa1ec97ca061b06408900bac2e0549e4f63130b1e35093f137b"
     end
     on_intel do
-      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.15/ropeshift_0.1.0-alpha.15_linux_amd64.tar.gz"
-      sha256 "65254d8254c1a46809ecf1ac37a9910144ab0323a9fb8647db4f6786af135916"
+      url "https://github.com/bkuberek/ropeshift/releases/download/v0.1.0-alpha.16/ropeshift_0.1.0-alpha.16_linux_amd64.tar.gz"
+      sha256 "4917d07455fa1ade34c4b8841733c897b66364ac2d9264785b69002038c14a0a"
     end
   end
 
